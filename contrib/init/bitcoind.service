@@ -1,0 +1,25 @@
+# It is not recommended to modify this file in-place, because it will
+# be overwritten during package upgrades. If you want to add further
+# options or overwrite existing ones then use
+# $ systemctl edit uexd.service
+# See "man systemd.service" for details.
+
+# Note that almost all daemon options could be specified in
+# /etc/bitcoin/bitcoin.conf
+
+[Unit]
+Description=Bitcoin daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/uexd -daemon -conf=/etc/bitcoin/bitcoin.conf -pid=/run/uexd/uexd.pid
+# Creates /run/uexd owned by bitcoin
+RuntimeDirectory=uexd
+User=bitcoin
+Type=forking
+PIDFile=/run/uexd/uexd.pid
+Restart=on-failure
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
