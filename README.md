@@ -21,8 +21,7 @@ can use UEX as a reward to them.
 
 
 For more information, as well as an immediately useable, binary version of
-the UEX software, see https://github.com/ultraEX/UEX, or read the 
-[bitcoin original whitepaper](https://bitcoincore.org/bitcoin.pdf).
+the UEX software, see https://github.com/ultraEX/UEX.
 
 License
 -------

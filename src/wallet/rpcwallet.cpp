@@ -952,7 +952,7 @@ UniValue getloosechange(const JSONRPCRequest& request)
         if (!vout_v.isNum() || !vamount_v.isNum())
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, missing vout or amount key");
         int64_t nOutput = vout_v.get_int();
-		int64_t nAmount = vamount_v.get_int() * COIN;
+		int64_t nAmount = vamount_v.get_real() * COIN;
         if (nOutput < 0 || nAmount < 0)
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, vout or amount must be positive");
 		amount += nAmount;
