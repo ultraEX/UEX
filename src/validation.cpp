@@ -1134,9 +1134,11 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 	//uex altcoin premine 500 yi =50,000,000,000 = 50 billion COIN
 	if (1 == nHeight){
 		return TOTALCOIN * COIN;
-	}else{
+	}else if (nHeight <= BLOCK_SUBSIDY_HEIGHT){
 		return MINECOIN * COIN;
-	}
+	}else {
+        return 0;
+    }
 #if 0	
     int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
     // Force block reward to zero when right shift is undefined.

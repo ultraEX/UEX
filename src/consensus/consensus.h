@@ -23,6 +23,8 @@ static const int WITNESS_SCALE_FACTOR = 4;
 
 static const int PREMINE_BLOCKSNUM = 399;
 
+static const int BLOCK_SUBSIDY_HEIGHT = 75330;
+
 static const size_t MIN_TRANSACTION_WEIGHT = WITNESS_SCALE_FACTOR * 60; // 60 is the lower bound for the size of a valid serialized CTransaction
 static const size_t MIN_SERIALIZABLE_TRANSACTION_WEIGHT = WITNESS_SCALE_FACTOR * 10; // 10 is the lower bound for the size of a serialized CTransaction
 
